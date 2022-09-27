@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 1 Exercise</title>
+    <script>
+        // Link object
+        var Link = {
+            setColor:function(color) {
+                var alist = document.querySelectorAll('a');
+                var i = 0;
+                while (i < alist.length) {
+                    alist[i].style.color = color;
+                    i = i + 1;
+                }
+            }
+        }
+
+        // Body object
+        var Body = {
+            setColor:function(color) {
+                document.querySelector('body').style.color = color;
+            },
+            setBackgroundColor:function(color) {
+                document.querySelector('body').style.backgroundColor = color;
+            }
+        }
+
+        function darkLight (self) {
+            var target = document.querySelector('body');
+            if (self.value === 'dark') {
+                // background & text color change to 'dark mode'
+                Body.setColor('white');
+                Body.setBackgroundColor('black');
+                self.value = 'light';
+
+                // a tag color to lightpink
+                Link.setColor('lightpink');
+            }
+            else {
+                // background & text color change to 'light mode'
+                Body.setBackgroundColor('white');
+                Body.setColor('black');
+                self.value = 'dark';
+
+                // a tag color to blue
+                Link.setColor('blue');
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1><a href="index.html">LikeLion @UCSD</a></h1>
+
+        <input type="button" value="dark" onclick="darkLight(this);">
+        <ol>
+            <li><a href="https://www.likelion.net/">Have</a></li>
+            <li><a href="https://www.likelion.net/">Fun</a></li>
+            <li><a href="https://www.likelion.net/">Coding!</a></li>
+        </ol>
+
+    <h1>LikeLion US</h1>
+
+
+    <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+        Unde in doloribus totam tempore odit minima atque reprehenderit 
+        tempora optio assumenda nisi molestiae ea repellendus corrupti 
+        magnam, quasi delectus nesciunt. Nesciunt.</h2>
+
+</body>
+</html>
